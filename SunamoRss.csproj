@@ -4,7 +4,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>sunamo.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <Version>24.2.1.3</Version>
+    <Version>24.2.6.2</Version>
     <Description>Wrapper around Microsoft.SyndicationFeed.ReaderWriter library</Description>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
