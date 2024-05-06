@@ -15,9 +15,9 @@
     <PackageReference Include="System.Memory" Version="4.5.5" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoRss</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoRss</DefineConstants>
   </PropertyGroup>
 </Project>
