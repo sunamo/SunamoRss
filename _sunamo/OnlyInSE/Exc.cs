@@ -1,3 +1,5 @@
+
+namespace SunamoRss;
 using System.Diagnostics;
 using System.Text;
 

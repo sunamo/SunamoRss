@@ -1,3 +1,5 @@
+
+namespace SunamoRss;
 public class AllChars
 {
     public static List<char> vsZnakyWithoutSpecial;
