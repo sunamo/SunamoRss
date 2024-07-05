@@ -9,6 +9,11 @@ global using Microsoft.SyndicationFeed.Rss;
 global using System.Text;
 global using System.Collections.Generic;
 global using System.Collections;
-
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
+global using SunamoRss;
+global using SunamoRss._sunamo.SunamoStringGetLines;
+global using SunamoRss._sunamo.SunamoValues;
+global using SunamoRss._sunamo.SunamoXlfKeys;
+global using SunamoRss._sunamo.SunamoExceptions.OnlyInSE;
+global using SunamoRss._sunamo.SunamoExceptions._AddedToAllCsproj;

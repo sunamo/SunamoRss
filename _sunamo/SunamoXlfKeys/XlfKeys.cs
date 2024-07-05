@@ -1,4 +1,4 @@
-namespace SunamoRss;
+namespace SunamoRss._sunamo.SunamoXlfKeys;
 
 
 

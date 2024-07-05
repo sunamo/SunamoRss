@@ -1,5 +1,5 @@
 
-namespace SunamoRss;
+namespace SunamoRss._sunamo.SunamoExceptions.OnlyInSE;
 internal class TranslateAble
 {
     
