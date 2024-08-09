@@ -18,35 +18,35 @@ public class RssHelper
                     // Read Item
                     case SyndicationElementType.Item:
                         var item = feedReader.ReadItem()
-                        .Result; //AsyncHelper.ci.GetResult(feedReader.ReadItem());
+                            .Result; //AsyncHelper.ci.GetResult(feedReader.ReadItem());
                         result.Add(new Tuple<string, string, string, DateTimeOffset>(item.Title,
-                        item.Links.First().Uri.ToString(), item.Description, item.Published));
+                            item.Links.First().Uri.ToString(), item.Description, item.Published));
                         break;
 
-                        #region MyRegion
+                    #region MyRegion
 
-                        //// Read category
-                        //case SyndicationElementType.Category:
-                        //    ISyndicationCategory category = await feedReader.ReadCategory();
-                        //    break;
-                        //// Read Image
-                        //case SyndicationElementType.Image:
-                        //    ISyndicationImage image = await feedReader.ReadImage();
-                        //    break;
-                        //// Read link
-                        //case SyndicationElementType.Link:
-                        //    ISyndicationLink link = await feedReader.ReadLink();
-                        //    break;
-                        //// Read Person
-                        //case SyndicationElementType.Person:
-                        //    ISyndicationPerson person = await feedReader.ReadPerson();
-                        //    break;
-                        //// Read content
-                        //default:
-                        //    ISyndicationContent content = await feedReader.ReadContent();
-                        //    break;
+                    //// Read category
+                    //case SyndicationElementType.Category:
+                    //    ISyndicationCategory category = await feedReader.ReadCategory();
+                    //    break;
+                    //// Read Image
+                    //case SyndicationElementType.Image:
+                    //    ISyndicationImage image = await feedReader.ReadImage();
+                    //    break;
+                    //// Read link
+                    //case SyndicationElementType.Link:
+                    //    ISyndicationLink link = await feedReader.ReadLink();
+                    //    break;
+                    //// Read Person
+                    //case SyndicationElementType.Person:
+                    //    ISyndicationPerson person = await feedReader.ReadPerson();
+                    //    break;
+                    //// Read content
+                    //default:
+                    //    ISyndicationContent content = await feedReader.ReadContent();
+                    //    break;
 
-                        #endregion
+                    #endregion
                 }
 
                 if (result.Count == 5) break;
@@ -83,7 +83,7 @@ public class RssHelper
                         var item = await feedReader.ReadItem();
 
                         result.Add(new Tuple<string, string, DateTimeOffset>(item.Title,
-                        item.Links.First().Uri.ToString(), item.Published));
+                            item.Links.First().Uri.ToString(), item.Published));
 
                         break;
 
