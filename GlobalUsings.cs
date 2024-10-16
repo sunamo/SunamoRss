@@ -8,7 +8,7 @@ global using Microsoft.SyndicationFeed;
 global using Microsoft.SyndicationFeed.Rss;
 global using System.Text;
 global using System.Collections;
-global using SunamoRss._sunamo.SunamoValues;
+global using SunamoRss;
 global using SunamoRss._sunamo.SunamoExceptions;
 global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
