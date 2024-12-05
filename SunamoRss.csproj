@@ -4,7 +4,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>sunamo.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <Version>24.11.11.1</Version>
+    <Version>24.12.5.1</Version>
     <Description>Wrapper around Microsoft.SyndicationFeed.ReaderWriter library</Description>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
@@ -14,14 +14,15 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageReleaseNotes>Fix empty string for spaces</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated nuget packages to secured versions</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2">
     </PackageReference>
-    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Memory" Version="4.6.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <None Include="readme.md" Pack="True" PackagePath="." />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
