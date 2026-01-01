@@ -4,7 +4,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>sunamo.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <Version>25.12.31.1</Version>
+    <Version>26.1.1.51</Version>
     <Description>Wrapper around Microsoft.SyndicationFeed.ReaderWriter library</Description>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
