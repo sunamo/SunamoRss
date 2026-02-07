@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoRss.Tests\\SunamoRss.Tests.csproj" />
+  <Project Path="RunnerRss\\RunnerRss.csproj" />
+  <Project Path="SunamoRss\SunamoRss.csproj" />
+</Solution>
