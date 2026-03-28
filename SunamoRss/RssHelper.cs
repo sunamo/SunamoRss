@@ -1,7 +1,16 @@
 namespace SunamoRss;
 
+/// <summary>
+/// Provides helper methods for reading and parsing RSS feeds.
+/// </summary>
 public class RssHelper
 {
+    /// <summary>
+    /// Reads up to 5 latest posts from an RSS feed file synchronously.
+    /// Returns a list of tuples containing title, link URL, description and publish date.
+    /// </summary>
+    /// <param name="filePath">Absolute path to the RSS feed XML file.</param>
+    /// <returns>List of tuples with title, link, description and publish date of the latest posts.</returns>
     public static List<Tuple<string, string, string, DateTimeOffset>> Latest5PostsFromRss(string filePath)
     {
         List<Tuple<string, string, string, DateTimeOffset>> result = new();
@@ -15,38 +24,11 @@ public class RssHelper
             {
                 switch (feedReader.ElementType)
                 {
-                    // Read Item
                     case SyndicationElementType.Item:
-                        var item = feedReader.ReadItem()
-                            .Result; //AsyncHelper.ci.GetResult(feedReader.ReadItem());
-                        result.Add(new Tuple<string, string, string, DateTimeOffset>(item.Title,
-                            item.Links.First().Uri.ToString(), item.Description, item.Published));
+                        var syndicationItem = feedReader.ReadItem().Result;
+                        result.Add(new Tuple<string, string, string, DateTimeOffset>(syndicationItem.Title,
+                            syndicationItem.Links.First().Uri.ToString(), syndicationItem.Description, syndicationItem.Published));
                         break;
-
-                    #region MyRegion
-
-                    //// Read category
-                    //case SyndicationElementType.Category:
-                    //    ISyndicationCategory category = await feedReader.ReadCategory();
-                    //    break;
-                    //// Read Image
-                    //case SyndicationElementType.Image:
-                    //    ISyndicationImage image = await feedReader.ReadImage();
-                    //    break;
-                    //// Read link
-                    //case SyndicationElementType.Link:
-                    //    ISyndicationLink link = await feedReader.ReadLink();
-                    //    break;
-                    //// Read Person
-                    //case SyndicationElementType.Person:
-                    //    ISyndicationPerson person = await feedReader.ReadPerson();
-                    //    break;
-                    //// Read content
-                    //default:
-                    //    ISyndicationContent content = await feedReader.ReadContent();
-                    //    break;
-
-                    #endregion
                 }
 
                 if (result.Count == 5) break;
@@ -56,7 +38,13 @@ public class RssHelper
         return result;
     }
 
-    private static async Task<List<Tuple<string, string, DateTimeOffset>>> Latest5PostsFromRssAsync(string filePath)
+    /// <summary>
+    /// Reads up to 5 latest posts from an RSS feed file asynchronously.
+    /// Returns a list of tuples containing title, link URL and publish date.
+    /// </summary>
+    /// <param name="filePath">Absolute path to the RSS feed XML file.</param>
+    /// <returns>List of tuples with title, link and publish date of the latest posts.</returns>
+    public static async Task<List<Tuple<string, string, DateTimeOffset>>> Latest5PostsFromRssAsync(string filePath)
     {
         List<Tuple<string, string, DateTimeOffset>> result = new();
 
@@ -68,36 +56,30 @@ public class RssHelper
             {
                 switch (feedReader.ElementType)
                 {
-                    // Read category
                     case SyndicationElementType.Category:
                         await feedReader.ReadCategory();
                         break;
 
-                    // Read Image
                     case SyndicationElementType.Image:
                         await feedReader.ReadImage();
                         break;
 
-                    // Read Item
                     case SyndicationElementType.Item:
-                        var item = await feedReader.ReadItem();
+                        var syndicationItem = await feedReader.ReadItem();
 
-                        result.Add(new Tuple<string, string, DateTimeOffset>(item.Title,
-                            item.Links.First().Uri.ToString(), item.Published));
+                        result.Add(new Tuple<string, string, DateTimeOffset>(syndicationItem.Title,
+                            syndicationItem.Links.First().Uri.ToString(), syndicationItem.Published));
 
                         break;
 
-                    // Read link
                     case SyndicationElementType.Link:
                         await feedReader.ReadLink();
                         break;
 
-                    // Read Person
                     case SyndicationElementType.Person:
                         await feedReader.ReadPerson();
                         break;
 
-                    // Read content
                     default:
                         await feedReader.ReadContent();
                         break;
