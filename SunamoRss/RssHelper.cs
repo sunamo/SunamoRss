@@ -1,7 +1,16 @@
 namespace SunamoRss;
 
+/// <summary>
+/// Provides helper methods for reading and parsing RSS feeds.
+/// </summary>
 public class RssHelper
 {
+    /// <summary>
+    /// Reads up to 5 latest posts from an RSS feed file synchronously.
+    /// Returns a list of tuples containing title, link URL, description and publish date.
+    /// </summary>
+    /// <param name="filePath">Absolute path to the RSS feed XML file.</param>
+    /// <returns>List of tuples with title, link, description and publish date of the latest posts.</returns>
     public static List<Tuple<string, string, string, DateTimeOffset>> Latest5PostsFromRss(string filePath)
     {
         List<Tuple<string, string, string, DateTimeOffset>> result = new();
@@ -29,6 +38,12 @@ public class RssHelper
         return result;
     }
 
+    /// <summary>
+    /// Reads up to 5 latest posts from an RSS feed file asynchronously.
+    /// Returns a list of tuples containing title, link URL and publish date.
+    /// </summary>
+    /// <param name="filePath">Absolute path to the RSS feed XML file.</param>
+    /// <returns>List of tuples with title, link and publish date of the latest posts.</returns>
     public static async Task<List<Tuple<string, string, DateTimeOffset>>> Latest5PostsFromRssAsync(string filePath)
     {
         List<Tuple<string, string, DateTimeOffset>> result = new();
