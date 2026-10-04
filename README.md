@@ -1,5 +1,10 @@
 # SunamoRss
 
+## Short description
+
+Obálka nad knihovnou Microsoft.SyndicationFeed.ReaderWriter pro čtení a zápis RSS kanálů. Obsahuje Runner a testy.
+
+
 Wrapper around Microsoft.SyndicationFeed.ReaderWriter library
 
 ## Overview
