@@ -1,7 +1,15 @@
 namespace SunamoRss;
 
+/// <summary>
+/// Represents the rss helper type.
+/// </summary>
 public class RssHelper
 {
+    /// <summary>
+    /// Latest 5 posts from rss.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <returns>The latest 5 posts from rss result.</returns>
     public static List<Tuple<string, string, string, DateTimeOffset>> Latest5PostsFromRss(string filePath)
     {
         List<Tuple<string, string, string, DateTimeOffset>> result = new();
@@ -29,6 +37,11 @@ public class RssHelper
         return result;
     }
 
+    /// <summary>
+    /// Latest 5 posts from rss async.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <returns>The latest 5 posts from rss async result.</returns>
     public static async Task<List<Tuple<string, string, DateTimeOffset>>> Latest5PostsFromRssAsync(string filePath)
     {
         List<Tuple<string, string, DateTimeOffset>> result = new();
